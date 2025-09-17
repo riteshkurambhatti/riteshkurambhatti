@@ -7,20 +7,20 @@
 ## 🛠️ Tech Stack & Live Skills
 | Skill | Progress |
 |-------|----------|
-| HTML | ![HTML](https://progress-bar.dev/0/?title=HTML&suffix=%25) |
-| CSS | ![CSS](https://progress-bar.dev/0/?title=CSS&suffix=%25) |
-| JavaScript | ![JavaScript](https://progress-bar.dev/0/?title=JS&suffix=%25) |
-| React | ![React](https://progress-bar.dev/0/?title=React&suffix=%25) |
-| Java | ![Java](https://progress-bar.dev/0/?title=Java&suffix=%25) |
-| Spring Boot | ![Spring Boot](https://progress-bar.dev/0/?title=SpringBoot&suffix=%25) |
-| Python | ![Python](https://progress-bar.dev/0/?title=Python&suffix=%25) |
-| Node.js | ![Node.js](https://progress-bar.dev/0/?title=Node.js&suffix=%25) |
-| TensorFlow | ![TensorFlow](https://progress-bar.dev/0/?title=TensorFlow&suffix=%25) |
-| PyTorch | ![PyTorch](https://progress-bar.dev/0/?title=PyTorch&suffix=%25) |
-| MySQL | ![MySQL](https://progress-bar.dev/0/?title=MySQL&suffix=%25) |
-| MongoDB | ![MongoDB](https://progress-bar.dev/0/?title=MongoDB&suffix=%25) |
+| HTML | ![HTML](https://progress-bar.dev/90/?title=HTML&suffix=%25) |
+| CSS | ![CSS](https://progress-bar.dev/85/?title=CSS&suffix=%25) |
+| JavaScript | ![JavaScript](https://progress-bar.dev/80/?title=JS&suffix=%25) |
+| React | ![React](https://progress-bar.dev/75/?title=React&suffix=%25) |
+| Java | ![Java](https://progress-bar.dev/80/?title=Java&suffix=%25) |
+| Spring Boot | ![Spring Boot](https://progress-bar.dev/70/?title=SpringBoot&suffix=%25) |
+| Python | ![Python](https://progress-bar.dev/85/?title=Python&suffix=%25) |
+| Node.js | ![Node.js](https://progress-bar.dev/70/?title=Node.js&suffix=%25) |
+| TensorFlow | ![TensorFlow](https://progress-bar.dev/60/?title=TensorFlow&suffix=%25) |
+| PyTorch | ![PyTorch](https://progress-bar.dev/60/?title=PyTorch&suffix=%25) |
+| MySQL | ![MySQL](https://progress-bar.dev/75/?title=MySQL&suffix=%25) |
+| MongoDB | ![MongoDB](https://progress-bar.dev/70/?title=MongoDB&suffix=%25) |
 
-*Skill bars start at 0% and will update automatically via GitHub Actions.*
+*Skill bars are animated and updated automatically via GitHub Actions.*
 
 ---
 
@@ -35,11 +35,9 @@
 ---
 
 ## 💼 Featured Projects
-[![Project 1](https://github-readme-stats.vercel.app/api/pin/?username=riteshkurambhatti&repo=project1&theme=radical)](https://github.com/riteshkurambhatti/project1)
+[![Project 1](https://github-readme-stats.vercel.app/api/pin/?username=riteshkurambhatti&repo=project1&theme=radical)](https://github.com/riteshkurambhatti/Customised-Virtual-File-System-CVFS-)
 [![Project 2](https://github-readme-stats.vercel.app/api/pin/?username=riteshkurambhatti&repo=project2&theme=radical)](https://github.com/riteshkurambhatti/project2)
 [![Project 3](https://github-readme-stats.vercel.app/api/pin/?username=riteshkurambhatti&repo=project3&theme=radical)](https://github.com/riteshkurambhatti/project3)
-
-> Replace `project1`, `project2`, `project3` with your actual repositories.
 
 ---
 
@@ -54,7 +52,8 @@
 ## 🌐 Portfolio & Social Links
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ritesh-kurambhatii-5906a0325)  
 [![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://yourwebsite.com)  
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:riteshkurambhatti2006.com)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:riteshkurambhatti2006@gmail.com@gmail.com)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/yourhandle)
 
 ---
 
@@ -68,5 +67,5 @@
 
 ---
 
-## ⚡ Motto
-**“Build. Innovate. Automate. Repeat.”** 💻✨
+## ⚡ Fun Fact
+**“Code. Learn. Solve. Repeat.”** 🔥
