@@ -2,8 +2,8 @@ name: Update Live Skill Bars
 
 on:
   schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:
+    - cron: '0 0 * * *' # Runs daily at midnight
+  workflow_dispatch:       # Allows manual trigger
 
 jobs:
   update-skills:
@@ -14,8 +14,10 @@ jobs:
       - name: Install GitHub CLI
         run: sudo apt-get install gh -y
 
-      - name: Update Skill Bars
+      - name: Calculate Skill Progress
         run: |
+          echo "Calculating dynamic skill percentages..."
+
           get_percentage() {
             SKILL=$1
             TOTAL=$(gh repo list riteshkurambhatti --json name,defaultBranchRef --jq ".[] | select(.name|contains(\"$SKILL\")) | .defaultBranchRef.target.history.totalCount" | paste -sd+ | bc)
@@ -24,36 +26,45 @@ jobs:
             echo $TOTAL
           }
 
-          HTML=$(get_percentage "html")
-          CSS=$(get_percentage "css")
-          JS=$(get_percentage "js")
-          REACT=$(get_percentage "react")
-          JAVA=$(get_percentage "java")
-          SPRING=$(get_percentage "spring")
-          PYTHON=$(get_percentage "python")
-          NODE=$(get_percentage "node")
-          TENSOR=$(get_percentage "tensorflow")
-          PYTORCH=$(get_percentage "pytorch")
-          MYSQL=$(get_percentage "mysql")
-          MONGO=$(get_percentage "mongo")
+          HTML_PERCENT=$(get_percentage "html")
+          CSS_PERCENT=$(get_percentage "css")
+          JS_PERCENT=$(get_percentage "js")
+          REACT_PERCENT=$(get_percentage "react")
+          JAVA_PERCENT=$(get_percentage "java")
+          SPRING_PERCENT=$(get_percentage "spring")
+          PYTHON_PERCENT=$(get_percentage "python")
+          NODE_PERCENT=$(get_percentage "node")
+          TENSOR_PERCENT=$(get_percentage "tensorflow")
+          PYTORCH_PERCENT=$(get_percentage "pytorch")
+          MYSQL_PERCENT=$(get_percentage "mysql")
+          MONGO_PERCENT=$(get_percentage "mongo")
 
-          sed -i "s|!\[HTML\](https://progress-bar.dev/.*)|![HTML](https://progress-bar.dev/${HTML}/?title=HTML&suffix=%25)|" README.md
-          sed -i "s|!\[CSS\](https://progress-bar.dev/.*)|![CSS](https://progress-bar.dev/${CSS}/?title=CSS&suffix=%25)|" README.md
-          sed -i "s|!\[JavaScript\](https://progress-bar.dev/.*)|![JavaScript](https://progress-bar.dev/${JS}/?title=JS&suffix=%25)|" README.md
-          sed -i "s|!\[React\](https://progress-bar.dev/.*)|![React](https://progress-bar.dev/${REACT}/?title=React&suffix=%25)|" README.md
-          sed -i "s|!\[Java\](https://progress-bar.dev/.*)|![Java](https://progress-bar.dev/${JAVA}/?title=Java&suffix=%25)|" README.md
-          sed -i "s|!\[Spring Boot\](https://progress-bar.dev/.*)|![Spring Boot](https://progress-bar.dev/${SPRING}/?title=SpringBoot&suffix=%25)|" README.md
-          sed -i "s|!\[Python\](https://progress-bar.dev/.*)|![Python](https://progress-bar.dev/${PYTHON}/?title=Python&suffix=%25)|" README.md
-          sed -i "s|!\[Node.js\](https://progress-bar.dev/.*)|![Node.js](https://progress-bar.dev/${NODE}/?title=Node.js&suffix=%25)|" README.md
-          sed -i "s|!\[TensorFlow\](https://progress-bar.dev/.*)|![TensorFlow](https://progress-bar.dev/${TENSOR}/?title=TensorFlow&suffix=%25)|" README.md
-          sed -i "s|!\[PyTorch\](https://progress-bar.dev/.*)|![PyTorch](https://progress-bar.dev/${PYTORCH}/?title=PyTorch&suffix=%25)|" README.md
-          sed -i "s|!\[MySQL\](https://progress-bar.dev/.*)|![MySQL](https://progress-bar.dev/${MYSQL}/?title=MySQL&suffix=%25)|" README.md
-          sed -i "s|!\[MongoDB\](https://progress-bar.dev/.*)|![MongoDB](https://progress-bar.dev/${MONGO}/?title=MongoDB&suffix=%25)|" README.md
+          echo "HTML: $HTML_PERCENT%, CSS: $CSS_PERCENT%, JS: $JS_PERCENT%"
+          echo "React: $REACT_PERCENT%, Java: $JAVA_PERCENT%, Spring Boot: $SPRING_PERCENT%"
+          echo "Python: $PYTHON_PERCENT%, Node.js: $NODE_PERCENT%"
+          echo "TensorFlow: $TENSOR_PERCENT%, PyTorch: $PYTORCH_PERCENT%"
+          echo "MySQL: $MYSQL_PERCENT%, MongoDB: $MONGO_PERCENT%"
 
-      - name: Commit & Push
+      - name: Update README.md
+        run: |
+          sed -i "s|!\[HTML\](https://progress-bar.dev/.*)|![HTML](https://progress-bar.dev/${HTML_PERCENT}/?title=HTML&suffix=%25)|" README.md
+          sed -i "s|!\[CSS\](https://progress-bar.dev/.*)|![CSS](https://progress-bar.dev/${CSS_PERCENT}/?title=CSS&suffix=%25)|" README.md
+          sed -i "s|!\[JavaScript\](https://progress-bar.dev/.*)|![JavaScript](https://progress-bar.dev/${JS_PERCENT}/?title=JS&suffix=%25)|" README.md
+          sed -i "s|!\[React\](https://progress-bar.dev/.*)|![React](https://progress-bar.dev/${REACT_PERCENT}/?title=React&suffix=%25)|" README.md
+          sed -i "s|!\[Java\](https://progress-bar.dev/.*)|![Java](https://progress-bar.dev/${JAVA_PERCENT}/?title=Java&suffix=%25)|" README.md
+          sed -i "s|!\[Spring Boot\](https://progress-bar.dev/.*)|![Spring Boot](https://progress-bar.dev/${SPRING_PERCENT}/?title=SpringBoot&suffix=%25)|" README.md
+          sed -i "s|!\[Python\](https://progress-bar.dev/.*)|![Python](https://progress-bar.dev/${PYTHON_PERCENT}/?title=Python&suffix=%25)|" README.md
+          sed -i "s|!\[Node.js\](https://progress-bar.dev/.*)|![Node.js](https://progress-bar.dev/${NODE_PERCENT}/?title=Node.js&suffix=%25)|" README.md
+          sed -i "s|!\[TensorFlow\](https://progress-bar.dev/.*)|![TensorFlow](https://progress-bar.dev/${TENSOR_PERCENT}/?title=TensorFlow&suffix=%25)|" README.md
+          sed -i "s|!\[PyTorch\](https://progress-bar.dev/.*)|![PyTorch](https://progress-bar.dev/${PYTORCH_PERCENT}/?title=PyTorch&suffix=%25)|" README.md
+          sed -i "s|!\[MySQL\](https://progress-bar.dev/.*)|![MySQL](https://progress-bar.dev/${MYSQL_PERCENT}/?title=MySQL&suffix=%25)|" README.md
+          sed -i "s|!\[MongoDB\](https://progress-bar.dev/.*)|![MongoDB](https://progress-bar.dev/${MONGO_PERCENT}/?title=MongoDB&suffix=%25)|" README.md
+
+      - name: Commit & Push Changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add README.md
-          git commit -m "Update skill bars automatically"
+          git commit -m "Update live skill bars automatically"
           git push
+
