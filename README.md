@@ -2,7 +2,7 @@
 
   <!-- Name with Gradient -->
   <h1 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 2.9em; background: linear-gradient(90deg, #6a11cb, #2575fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-    👋 Hi, I'm Ritesh Kurambhatti
+    👋 Hi, I'm Ritesh Laxmikant Kurambhatti
   </h1>
 
   <!-- Animated Tagline -->
