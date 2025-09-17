@@ -13,8 +13,8 @@
   <!-- Social Icons -->
   <p>
     <a href="https://github.com/riteshkurambhatti"><img src="https://skillicons.dev/icons?i=github" width="45"/></a>
-    <a href="https://www.linkedin.com/in/*your-linkedin*"><img src="https://skillicons.dev/icons?i=linkedin" width="45"/></a>
-    <a href="mailto:*your-email*"><img src="https://skillicons.dev/icons?i=gmail" width="45"/></a>
+    <a href="https://www.linkedin.com/in/ritesh-kurambhatii-5906a0325"><img src="https://skillicons.dev/icons?i=linkedin" width="45"/></a>
+    <a href="mailto:riteshkurambhatti2006@gmail.com"><img src="https://skillicons.dev/icons?i=gmail" width="45"/></a>
   </p>
 
 </div>
